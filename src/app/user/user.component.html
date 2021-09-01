@@ -1,0 +1,16 @@
+<ul class="list-group" style="margin-top: 30px;">
+  <li class="list-group-item list-group-item-secondary" 
+  (click) = "setAllUser(allUser)" 
+  [class]="getAllUserClass(allUser)" 
+  routerLink="/todos">Tüm Kullanıcılar</li>
+
+  <li (click)="setCurrentUser(user)" 
+  *ngFor="let user of users" 
+  routerLink="/todos/{{user.id}}"
+    [class]="getCurrentUserClass(user)">{{user.name}}</li>
+</ul>
+
+<!-- <h5 *ngIf="currentUser">{{currentUser.name}} seçtiniz</h5> -->
+
+<!-- (click)="serCurrentUser(user) = click tıklama özelliği getirir. setCurrentUser(user) tıklanan kullanıcı anlamını taşır -->
+<!-- [class] eğer componentteki bir methoda göre değiştirmek istiyorsan class ı böyle yazıyoruz -->
