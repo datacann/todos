@@ -26,19 +26,15 @@ export class AlbumsComponent implements OnInit {
   }
 
   addToCart(album:Album){
-
-    let item = CartItems.find(c=> c.album.id === album.id)
-
-    if(item){
-      this.toastrService.error("şarkı daha önceden eklenmiş ",album.title)
-    }else{
-      this.toastrService.success("favorilere eklendi",album.title)
-    }
-
+    // let item = CartItems.find(c=> c.album.id === album.id)
+    // if(item){
+    //   this.toastrService.error("şarkı daha önceden eklenmiş ",album.title)
+    // }else{
+    //   this.toastrService.success("favorilere eklendi",album.title)
+    // }
+    // this.cartService.addToCart(album);
     
     this.cartService.addToCart(album);
-    
-
 }
 
 }

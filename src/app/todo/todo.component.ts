@@ -11,6 +11,8 @@ import { Todo } from './todo';
 export class TodoComponent implements OnInit {
 
   todos: Todo[] = []
+  page: number = 1
+
 
   constructor(private todoService: TodoServiceService, private activatedRoute:ActivatedRoute) { }
 
@@ -33,5 +35,7 @@ export class TodoComponent implements OnInit {
       this.todos = data
     })
   }
+
+  
 
 }

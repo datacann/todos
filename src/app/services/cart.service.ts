@@ -19,22 +19,40 @@ export class CartService {
 
     let item = CartItems.find(c=> c.album.id === album.id)
 
-    // if(item){
-    //   this.toastrService.success("favorilere eklendi",album.title)
-    // }else{
-    //   let cartItem: CartItem = { album: album, quantity: 1 }
-    //   CartItems.push(cartItem)
-    // }
-
-    if(!item){
+     if(item){
+      this.toastrService.error("bu şarkı zaten var",album.title)
+    }else{
       let cartItem: CartItem = { album: album, quantity: 1 }
       CartItems.push(cartItem)
+      this.toastrService.success("favorilere eklendi",album.title)
+     }
+    // if(!item){
+    //   let cartItem: CartItem = { album: album, quantity: 1 }
+    //   CartItems.push(cartItem)
      
-    }
+    // }
      
-    
-
+    // let item = CartItems.find(c=> c.album.id === album.id)
+    // if(item){
+    //   this.toastrService.error("şarkı daha önceden eklenmiş ",album.title)
+    // }else{
+    //   this.toastrService.success("favorilere eklendi",album.title)
+    // }
   }
 
+  removeFromCart(album:Album){
+    let item = CartItems.find(c=>c.album.id===album.id)
 
+
+    if(item){
+
+      if(item.quantity>1){
+        item.quantity--
+      }else{
+        CartItems.splice(CartItems.indexOf(item),1)
+      }
+    }
+  }
 }
+
+

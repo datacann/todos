@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<table *ngIf="cartItems.length>0; else emptyCart" class="table">
+    <thead>
+      <tr>
+        <th>Albüm Adı</th>
+        <th>Kullaıcı</th>
+        <th></th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let cartItem of cartItems">
+        <td>{{cartItem.album.title}}</td>
+        <td>{{cartItem.album.userId}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="removeFromCart(cartItem.album)">x</button></td>
+
+    </tbody>
+
+  </table>
+  <ng-template #emptyCart>
+    Sepetiniz boş
+  </ng-template>

@@ -14,6 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartComponent } from './cart/cart.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -23,13 +25,16 @@ import { CartDetailComponent } from './cart-detail/cart-detail.component';
     TodoComponent,
     AlbumsComponent,
     CartComponent,
-    CartDetailComponent
+    CartDetailComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxPaginationModule ,
     ToastrModule.forRoot({positionClass:"toast-bottom-right"})
   ],
   providers: [],
