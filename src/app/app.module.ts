@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +16,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartComponent } from './cart/cart.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TodoFilterPipe } from './pipe/todo-filter.pipe';
+import { UserFilterPipe } from './pipe/user-filter.pipe';
+import { UserUpdateComponent } from './user-update/user-update.component';
+import { TodoAddComponent } from './todo-add/todo-add.component';
+import { TodoUpdateComponent } from './todo-update/todo-update.component';
+import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 
 
 @NgModule({
@@ -26,6 +33,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AlbumsComponent,
     CartComponent,
     CartDetailComponent,
+    TodoFilterPipe,
+    UserFilterPipe,
+    UserUpdateComponent,
+    TodoAddComponent,
+    TodoUpdateComponent,
+    TodoDetailComponent,
+  
    
     
   ],
@@ -35,6 +49,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule ,
+    FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({positionClass:"toast-bottom-right"})
   ],
   providers: [],

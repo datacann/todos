@@ -22,5 +22,27 @@ export class TodoServiceService {
     return this.httpClient.get<Todo[]>(newPath);
   }
 
+  getTodosByPage(page:number){
+    return this.httpClient.get<Todo[]>(this.apiUrl + "?_page=" + page);
+  }
+
+  add(todo: Todo): Observable<Todo> {
+    return this.httpClient.post<Todo>(this.apiUrl, todo);
+  }
+
+  update(id: number, todo: Todo): Observable<Todo> {
+    return this.httpClient.put<Todo>(this.apiUrl + '/' + id, todo);
+  }
+
+  getTodosById(id: number): Observable<Todo> {
+    return this.httpClient.get<Todo>(this.apiUrl + '/' + id);
+  }
+
+  delete(id: number, ): Observable<Todo> {
+    return this.httpClient.delete<Todo>(this.apiUrl + '/' + id);
+  }
+
+
 
 }
+

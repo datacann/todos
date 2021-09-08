@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
   users : User[] = []
   currentUser:  User;
   allUser: User
+  filterText:string =""
 
   constructor(private userService:UserService) { }
 

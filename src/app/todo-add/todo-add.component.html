@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="card">
+        <div class="card-header">
+            <h5>Todo Ekle</h5>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="todoAddForm">
+                <div class="mb-3">
+                    <label>Title</label>
+                    <input type="text" placeholder="title" formControlName="title" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label>User No</label>
+                    <input type="text" placeholder="user numarası" formControlName="userId" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" formControlName="completed">
+                        <option value="" disabled>başarı durumu</option>
+                        <option [ngValue]="true">True</option>
+                        <option [ngValue]="false">False</option>
+                      </select>
+                    
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer">
+            <button [disabled]="!todoAddForm.valid" class="btn btn-success" (click)="add()">
+                Ekle
+            </button>
+        </div>
+    </div>
+</div>

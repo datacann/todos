@@ -1,3 +1,8 @@
+<div>
+  <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="arama ifadesi" style="margin-top: 10px;"/>
+  <span *ngIf="filterText" class="badge bg-secondary">{{filterText}}</span>
+
+</div>
 <ul class="list-group" style="margin-top: 30px;">
   <li class="list-group-item list-group-item-secondary" 
   (click) = "setAllUser(allUser)" 
@@ -5,7 +10,7 @@
   routerLink="/todos">Tüm Kullanıcılar</li>
 
   <li (click)="setCurrentUser(user)" 
-  *ngFor="let user of users" 
+  *ngFor="let user of users | userFilter:filterText" 
   routerLink="/todos/{{user.id}}"
     [class]="getCurrentUserClass(user)">{{user.name}}</li>
 </ul>
